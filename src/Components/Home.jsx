@@ -5,6 +5,7 @@ import logo from "../assets/logo1.jpg";
 import students from "../assets/bg-image.jpg";
 import Courses from "../Sections/Courses";
 import video from "../assets/re.mp4";
+import Skills from "../Sections/Skills";
 
 function Home() {
   return (
@@ -36,8 +37,8 @@ function Home() {
           className="test h-screen bg-no-repeat bg-cover bg-center"
           style={{ backgroundImage: `url(${students})` }}
         >
-          <div className="flex justify-center items-center gap-40 flex-wrap transform translate-y-24">
-            <div className="test bg-white w-120 h-120 rounded-xl p-15">
+          <div className="transform translate-y-24 ml-20">
+            <div className="test bg-white w-150 h-95 rounded-xl p-15">
               <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl mb-10">
                 Education Technology
               </h1>
@@ -46,27 +47,17 @@ function Home() {
                 and take your education to next level
               </p>
 
-              <button className="px-6 py-3 mt-5 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
+              <button className="px-8 py-5 mt-5 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
                 Kirish Testi
-              </button> 
-              <button className="px-6 py-3 mt-5 ml-10 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
-                Mavzuni Boshlash 
               </button>
-            </div>
-            <div className="test-video">
-              <video
-                src={video}
-                type="video/mp4"
-                autoPlay
-                loop
-                muted
-                controls
-                className="w-150 pointer-events-none rounded-2xl"
-              />
+              <button className="px-8 py-5 mt-5 ml-10 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
+                Mavzuni Boshlash
+              </button>
             </div>
           </div>
         </div>
       </header>
+      <Skills />
       <Courses />
     </>
   );

@@ -37,22 +37,22 @@ function Home() {
           className="test h-screen bg-no-repeat bg-cover bg-center"
           style={{ backgroundImage: `url(${students})` }}
         >
-          <div className="transform translate-y-24 ml-20">
-            <div className="test bg-white w-150 h-95 rounded-xl p-15">
-              <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl mb-10">
-                Education Technology
+          <div className="flex flex-col items-start justify-center h-full text-left px-10">
+            <div className="bg-white bg-opacity-90 p-12 rounded-2xl shadow-2xl max-w-2xl">
+              <h1 className="text-5xl font-bold text-gray-800 mb-6">
+                Learn English With Us
               </h1>
-              <p className="text-lg mb-10">
-                Join Us For live interactive Sessions with top industry experts
-                and take your education to next level
+              <p className="text-xl text-gray-600 mb-8">
+                If you learn English, you can dominate the world. Join us to enhance your skills, try new methods, and achieve excellence.
               </p>
-
-              <button className="px-8 py-5 mt-5 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
-                Kirish Testi
-              </button>
-              <button className="px-8 py-5 mt-5 ml-10 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
-                Mavzuni Boshlash
-              </button>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <button className="px-10 py-5 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
+                  Kirish Testi
+                </button>
+                <button className="px-10 py-5 text-white bg-gradient-to-r from-green-500 to-teal-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
+                  Mavzuni Boshlash
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import students from "../assets/bg-image.jpg";
 import Courses from "../Sections/Courses";
 import video from "../assets/re.mp4";
 import Skills from "../Sections/Skills";
+import Why from "../Sections/Why";
 
 function Home() {
   return (
@@ -16,14 +17,14 @@ function Home() {
             <img className="rounded-2xl" width={100} src={logo} alt="" />
           </Link>
 
-          <ul className="item-list flex gap-10 items-center cursor-pointer">
-            <li className="item transform transition hover:-translate-y-1">
-              <a className="text-lg text-white">Bosh Sahifa</a>
+          <ul className="item-list flex gap-10 items-center ">
+            <li className="item">
+              <a className="text-lg text-white cursor-pointer">Bosh Sahifa</a>
             </li>
-            <li className="item transform transition hover:-translate-y-1">
-              <a className="text-lg text-white">Kirish Testi</a>
+            <li className="item">
+              <a className="text-lg text-white cursor-pointer">Kirish Testi</a>
             </li>
-            <li className="item transform transition hover:-translate-y-1">
+            <li className="item">
               <a className="text-lg text-white ">Bo'limlar</a>
             </li>
           </ul>
@@ -43,7 +44,8 @@ function Home() {
                 Learn English With Us
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                If you learn English, you can dominate the world. Join us to enhance your skills, try new methods, and achieve excellence.
+                If you learn English, you can dominate the world. Join us to
+                enhance your skills, try new methods, and achieve excellence.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <button className="px-10 py-5 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
@@ -59,6 +61,7 @@ function Home() {
       </header>
       <Skills />
       <Courses />
+      <Why />
     </>
   );
 }

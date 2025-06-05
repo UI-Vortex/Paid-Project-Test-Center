@@ -21,13 +21,13 @@ function Home() {
 
           <ul className="item-list flex gap-10 items-center ">
             <li className="item">
-              <a className="text-lg text-white cursor-pointer">Bosh Sahifa</a>
+              <a className="text-lg text-white cursor-pointer transition hover:text-orange-300">Bosh Sahifa</a>
             </li>
             <li className="item">
-              <a className="text-lg text-white cursor-pointer">Kirish Testi</a>
+              <a className="text-lg text-white cursor-pointer transition hover:text-orange-300">Kirish Testi</a>
             </li>
             <li className="item">
-              <a className="text-lg text-white ">Bo'limlar</a>
+              <a className="text-lg text-white cursor-pointer transition hover:text-orange-300">Bo'limlar</a>
             </li>
           </ul>
 

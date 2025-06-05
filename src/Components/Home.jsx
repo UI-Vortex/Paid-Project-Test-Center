@@ -7,6 +7,8 @@ import Courses from "../Sections/Courses";
 import video from "../assets/re.mp4";
 import Skills from "../Sections/Skills";
 import Why from "../Sections/Why";
+import Contact from "../Sections/Contact";
+import Footer from "./Footer";
 
 function Home() {
   return (
@@ -62,6 +64,8 @@ function Home() {
       <Skills />
       <Courses />
       <Why />
+      <Contact />
+      <Footer />
     </>
   );
 }

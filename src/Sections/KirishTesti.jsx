@@ -8,6 +8,7 @@ function KirishTesti() {
   const [data, setData] = useState(quizzes.in);
   const [index, setIndex] = useState(0);
   const [show, setShow] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
     setData(quizzes.in);
@@ -16,6 +17,7 @@ function KirishTesti() {
   const handleNext = () => {
     if (data.length - 1 > index) {
       setIndex((prev) => prev + 1);
+      setSelectedOption(null); // 🚨 RESET SELECTED OPTION
     } else {
       alert("Test tugadi, rahmat!");
       setShow(true);
@@ -31,8 +33,9 @@ function KirishTesti() {
   const springs = useSpring({
     from: { y: 0 },
     config: { tension: 120, friction: 14 },
-    to: { y: 100 },
+    to: { y: 200 },
   });
+
   return (
     <>
       {/* start here */}
@@ -54,6 +57,8 @@ function KirishTesti() {
                     name={`question-${index}`} // group radio buttons by question index
                     className="mr-3 accent-blue-500"
                     value={item}
+                    checked={selectedOption === item}
+                    onChange={() => setSelectedOption(item)}
                   />
                   {item}
                 </li>

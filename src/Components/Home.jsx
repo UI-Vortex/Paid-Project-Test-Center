@@ -5,6 +5,7 @@ import prep from "../assets/preparation-icon.jpg";
 import tutor from "../assets/tutor-icon.jpg";
 import selfStudy from "../assets/self-study-icon.jpg";
 import testCenter from "../assets/testcenter.png";
+import Spline from '@splinetool/react-spline';
 
 import students from "../assets/bg-image.jpg";
 
@@ -297,6 +298,7 @@ function Home() {
         </div>
       </div>
       {/* contact ended */}
+
     </>
   );
 }

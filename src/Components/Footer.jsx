@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo1.jpg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -14,9 +15,30 @@ function Footer() {
           />
 
           <ul className="item-list flex flex-col sm:flex-row gap-4 sm:gap-10 items-center text-white text-lg cursor-pointer mb-4 sm:mb-0">
-            <li className="item">Bosh Sahifa</li>
-            <li className="item">Kirish Testi</li>
-            <li className="item">Bo'limlar</li>
+            <li className="item">
+              <Link
+                to="/"
+                className="text-lg text-white cursor-pointer transition hover:text-orange-300"
+              >
+                Bosh Sahifa
+              </Link>
+            </li>
+            <li className="item">
+              <Link
+                to="/kirish/test"
+                className="text-lg text-white cursor-pointer transition hover:text-orange-300"
+              >
+                Kirish Testi
+              </Link>
+            </li>
+            <li className="item">
+              <Link
+                to="/"
+                className="text-lg text-white cursor-pointer transition hover:text-orange-300"
+              >
+                Bo'limlar
+              </Link>
+            </li>
           </ul>
 
           <div className="footer-icons flex gap-5">
@@ -24,10 +46,14 @@ function Footer() {
             <i className="fa-solid fa-phone p-3 bg-orange-500 text-white rounded-[50%] cursor-pointer transition hover:translate-y-[-5px]"></i>
           </div>
         </div>
-        <hr className="bg-white h-[2px] sm: bg-white h-[2px]"/>
+        <hr className="bg-white h-[2px] sm: bg-white h-[2px]" />
         <div className="text-center text-white py-4">
-          <p className="mb-2 text-lg font-bold">&copy; 2025 English Learning Platform</p>
-          <p className="text-sm text-gray-400 font-bold">Dasturchi: Zubair Muhammadjonov</p>
+          <p className="mb-2 text-lg font-bold">
+            &copy; 2025 English Learning Platform
+          </p>
+          <p className="text-sm text-gray-400 font-bold">
+            Dasturchi: Zubair Muhammadjonov
+          </p>
         </div>
       </footer>
     </>

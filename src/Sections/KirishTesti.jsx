@@ -3,6 +3,7 @@ import { quizzes } from "../Data";
 import { useSpring, animated } from "@react-spring/web";
 import { i, ul } from "framer-motion/client";
 import { useNavigate } from "react-router-dom";
+import RecieveTest from "./RecieveTest";
 
 function KirishTesti() {
   const [data, setData] = useState(quizzes.in);
@@ -10,23 +11,42 @@ function KirishTesti() {
   const [show, setShow] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const navigate = useNavigate();
+
+  const [correctAnswers, setCorrectAnswers] = useState([]);
+
   useEffect(() => {
     setData(quizzes.in);
   }, []);
 
   const handleNext = () => {
-    if (data.length - 1 > index) {
+    const currentQuestion = data[index];
+  
+    if (selectedOption === currentQuestion.answer) {
+      setCorrectAnswers((prev) => [...prev, currentQuestion]);
+    }
+  
+    if (index < data.length - 1) {
       setIndex((prev) => prev + 1);
-      setSelectedOption(null); // 🚨 RESET SELECTED OPTION
+      setSelectedOption(null);
     } else {
-      alert("Test tugadi, rahmat!");
-      setShow(true);
+      navigate("/test/javoblar", {
+        state: {
+          total: data.length,
+          correct: correctAnswers.length + (selectedOption === currentQuestion.answer ? 1 : 0),
+          wrong: data.length - (correctAnswers.length + (selectedOption === currentQuestion.answer ? 1 : 0)),
+          answers: [...correctAnswers, ...(selectedOption === currentQuestion.answer ? [currentQuestion] : [])],
+        },
+      });
     }
   };
 
   const handleRestart = () => {
     setIndex(0);
     setShow(false);
+    setCorrectCount(0);
+    setWrongCount(0);
+    setSelectedOption(null);
     setData(quizzes.in);
   };
 
@@ -39,7 +59,7 @@ function KirishTesti() {
   return (
     <>
       {/* start here */}
-      <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-600 flex flex-col items-center justify-center p-5">
+      <div className="min-h-screen bg-gradient-to-br from-gray-600 to-gray-600 flex flex-col items-center justify-center p-5">
         <div className="bg-white p-6 rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2">
           <div className="flex flex-col items-center gap-6 p-5">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-4 text-center">
@@ -87,6 +107,7 @@ function KirishTesti() {
         </div>
       </div>
       {/* ended here */}
+      {show && <RecieveTest correct={correctCount} wrong={wrongCount} />}
     </>
   );
 }
